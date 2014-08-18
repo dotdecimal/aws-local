@@ -30,5 +30,8 @@
   "preferGlobal": "true",
   "bin": {
     "aws-local" : "lib/cli.js"
+  },
+  "scripts": {
+    "test": "grunt"
   }
 }
