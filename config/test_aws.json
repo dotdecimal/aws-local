@@ -1,0 +1,11 @@
+{
+    "aws": {
+        "accessKeyId": "key",
+        "secretAccessKey": "invalid",
+        "region": "us-east-1",
+        "sslEnabled": false
+    },
+    "ec2": {
+        "endpoint": "http://localhost:4242"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "CreateKeyPair": {
+        "module": "ec2",
+        "subModule": "keypair"
+    }
+}
