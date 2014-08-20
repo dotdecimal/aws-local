@@ -17,7 +17,7 @@ before(function() {
     // AWS Local
 
     var AWSLocal = require('../lib/server');
-    global.awsLocal = new AWSLocal(path.resolve('../test_root'));
+    global.awsLocal = new AWSLocal(path.resolve('./test_root'));
 
     return awsLocal.listen(4242);
 });
