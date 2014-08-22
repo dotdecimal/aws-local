@@ -10,7 +10,7 @@ describe('instance', function() {
     describe('runInstances', function() {
         it('should correctly run an instance', function() {
             var str = 'UserTestData';
-            var conf = {
+            var params = {
                 ImageId: 'testimage',
                 MaxCount: 1,
                 MinCount: 1,
@@ -28,7 +28,7 @@ describe('instance', function() {
                 SecurityGroupIds: ['aa-12341234'],
                 UserData: (new Buffer(str)).toString('base64')
             };
-            return ec2.runInstancesAsync(conf).then(function(data) {
+            return ec2.runInstancesAsync(params).then(function(data) {
                 expect(data).to.have.keys('ReservationId', 'OwnerId', 'Groups', 'Instances');
                 expect(data.ReservationId).to.be.a.string;
                 expect(data.OwnerId).to.be.a.string;
