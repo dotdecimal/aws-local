@@ -31,7 +31,9 @@ module.exports = function(grunt) {
         },
         jshint: {
             options: {
-                ignores: ['lib/cli.js']
+                globals: {
+                    Promise: true
+                }
             },
             all: [
                 'lib/**/*.js'
@@ -103,5 +105,5 @@ module.exports = function(grunt) {
     // --------------------------------------------------
     // Default task
 
-    grunt.registerTask('default', [ /*'jshint',*/ 'jsdoc', 'mocha_istanbul:enforce']);
+    grunt.registerTask('default', ['jshint', 'jsdoc', 'mocha_istanbul:enforce']);
 };

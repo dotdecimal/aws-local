@@ -16,13 +16,6 @@ var config = JSON.parse(configFile);
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Promise
-
-Promise.longStackTraces();
-global.Promise = Promise;
-
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Chai
 
 var chai = require('chai');
