@@ -2,5 +2,9 @@
     "CreateKeyPair": {
         "module": "ec2",
         "subModule": "keypair"
+    },
+    "RunInstances": {
+        "module": "ec2",
+        "subModule": "instance"
     }
 }
