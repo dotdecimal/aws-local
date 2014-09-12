@@ -10,6 +10,7 @@
     "bluebird": "2.3.0",
     "body-parser": "1.6.5",
     "express": "4.8.4",
+    "lodash": "2.4.1",
     "nomnom": "1.8.0",
     "xml2js": "0.4.4"
   },
@@ -29,7 +30,7 @@
   },
   "preferGlobal": "true",
   "bin": {
-    "aws-local" : "lib/cli.js"
+    "aws-local": "lib/cli.js"
   },
   "scripts": {
     "test": "grunt"

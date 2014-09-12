@@ -6,5 +6,9 @@
     "RunInstances": {
         "module": "ec2",
         "subModule": "instance"
+    },
+    "TerminateInstances": {
+        "module": "ec2",
+        "subModule": "instance"
     }
 }
