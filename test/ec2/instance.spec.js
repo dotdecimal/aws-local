@@ -210,4 +210,58 @@ describe('instance', function() {
             });
         });
     });
+
+    describe('describeInstances', function() {
+        var id1, id2;
+
+        before(function() {
+            var str = 'UserTestData';
+            var params = {
+                ImageId: 'testimage3',
+                MaxCount: 2,
+                MinCount: 2,
+                InstanceType: 't1.micro',
+                KeyName: 'myuniquekey',
+                Placement: {
+                    AvailabilityZone: 'us-east-1a'
+                },
+                Monitoring: {
+                    Enabled: true
+                },
+                IamInstanceProfile: {
+                    Name: 'server'
+                },
+                SecurityGroupIds: ['aa-12341234'],
+                UserData: (new Buffer(str)).toString('base64')
+            };
+            return ec2.runInstancesAsync(params).then(function(data) {
+                id1 = data.Instances[0].InstanceId;
+                id2 = data.Instances[1].InstanceId;
+                var tagParams = {
+                    Resources: [id1, id2],
+                    Tags: [{
+                        Key: 'myspecialkey',
+                        Value: 'myspecialvalue'
+                    }]
+                };
+                return ec2.createTagsAsync(tagParams);
+            });
+        });
+
+        it('should describe all instances', function() {
+
+        });
+
+        // it('should describe all instances a certain tag', function() {
+        //     var params = {
+        //         Filters: [{
+        //             Name: 'myspecialkey',
+        //             Values: ['myspecialvalue']
+        //         }]
+        //     };
+        //     return ec2.describeInstances(params).then(function(data) {
+
+        //     });
+        // });
+    });
 });

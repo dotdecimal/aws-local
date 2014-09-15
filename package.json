@@ -12,7 +12,8 @@
     "express": "4.8.4",
     "lodash": "2.4.1",
     "nomnom": "1.8.0",
-    "xml2js": "0.4.4"
+    "xml2js": "0.4.4",
+    "xmlbuilder": "^2.4.4"
   },
   "devDependencies": {
     "aws-sdk": "2.0.14",
