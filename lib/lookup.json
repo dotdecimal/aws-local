@@ -10,5 +10,9 @@
     "TerminateInstances": {
         "module": "ec2",
         "subModule": "instance"
+    },
+    "CreateTags": {
+        "module": "ec2",
+        "subModule": "resource"
     }
 }
