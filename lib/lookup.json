@@ -11,6 +11,14 @@
         "module": "ec2",
         "subModule": "instance"
     },
+    "StopInstances": {
+        "module": "ec2",
+        "subModule": "instance"
+    },
+    "StartInstances": {
+        "module": "ec2",
+        "subModule": "instance"
+    },
     "CreateTags": {
         "module": "ec2",
         "subModule": "resource"
