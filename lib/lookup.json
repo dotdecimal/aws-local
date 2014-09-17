@@ -19,6 +19,10 @@
         "module": "ec2",
         "subModule": "instance"
     },
+    "DescribeInstances": {
+        "module": "ec2",
+        "subModule": "instance"
+    },
     "CreateTags": {
         "module": "ec2",
         "subModule": "resource"

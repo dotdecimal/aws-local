@@ -37,6 +37,36 @@ describe('instance', function() {
                 expect(data.Instances).to.have.length(1);
             });
         });
+
+        it('should correctly run multiple instances', function() {
+            var str = 'UserTestData';
+            var params = {
+                ImageId: 'testimage',
+                MaxCount: 2,
+                MinCount: 2,
+                InstanceType: 't1.micro',
+                KeyName: 'myuniquekey',
+                Placement: {
+                    AvailabilityZone: 'us-east-1a'
+                },
+                Monitoring: {
+                    Enabled: true
+                },
+                IamInstanceProfile: {
+                    Name: 'server'
+                },
+                SecurityGroupIds: ['aa-12341234'],
+                UserData: (new Buffer(str)).toString('base64')
+            };
+            return ec2.runInstancesAsync(params).then(function(data) {
+                expect(data).to.have.keys('ReservationId', 'OwnerId', 'Groups', 'Instances');
+                expect(data.ReservationId).to.be.a.string;
+                expect(data.OwnerId).to.be.a.string;
+                expect(data.Groups).to.be.an.array;
+                expect(data.Instances).to.be.an.array;
+                expect(data.Instances).to.have.length(2);
+            });
+        });
     });
 
     describe('terminateInstances', function() {
@@ -259,8 +289,8 @@ describe('instance', function() {
         //             Values: ['myspecialvalue']
         //         }]
         //     };
-        //     return ec2.describeInstances(params).then(function(data) {
-
+        //     return ec2.describeInstancesAsync(params).then(function(data) {
+        //         console.log(data);
         //     });
         // });
     });
